@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jæren Multiservice – profesjonelle tjenester for private og bedrifter. Takvask, høytrykkspyling, hekkeklipp og gravearbeid i Jæren, Sandnes og Stavanger." />
+    <title>Jæren Multiservice – Profesjonelle tjenester</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      html, body { background-color: #0d0d0d; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Netlify Forms: skjult form i bygget HTML slik at Netlify oppdager skjemaet (SPA) -->
+    <form name="contact" method="post" data-netlify="true" netlify hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <p><label>Name <input type="text" name="name" /></label></p>
+      <p><label>Email <input type="email" name="email" /></label></p>
+      <p><label>Message <textarea name="message"></textarea></label></p>
+      <p><button type="submit">Send</button></p>
+    </form>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

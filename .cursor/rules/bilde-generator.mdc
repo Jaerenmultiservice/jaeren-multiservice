@@ -1,0 +1,41 @@
+---
+description: Bruk bilde-generator med Jæren Multiservice-stil når bruker ber om å lage bilder/grafikk for prosjektet
+alwaysApply: true
+---
+
+# Bilde-generator for Jæren Multiservice
+
+Når brukeren ber deg om å **lage** noe visuelt for dette prosjektet (bilde, ikon, knapp, illustrasjon, hero, bakgrunn, grafikk, asset), skal du bruke **GenerateImage**-verktøyet med denne ferdige prompt-stilen.
+
+## VIKTIG – alltid samme
+
+- **Bildeformat:** **16:9 ratio** (aspect ratio 16:9).
+- **Glow:** **Samme oransje glow** (#ff7a00) – bruk konsekvent oransje lys/glow der det passer.
+- **Bakgrunn:** **Samme mørke bakgrunn** – svart/mørk (#0d0d0d, #000, #1a1a1a).
+- **Skrift:** **Samme font – Saira Condensed** – all tekst i bilder skal vises som om fonten er Saira Condensed (bold, moderne, kondensert sans-serif).
+
+## Prosjektstil (alltid inkluder i beskrivelsen)
+
+- **Tema:** Mørk, industriell, profesjonell. Jæren Multiservice – norsk tjenestebedrift (takvask, hagearbeid, gravearbeid, kattedør, etc.).
+- **Fargepalett:** Svart/mørkegrå (#0d0d0d, #1a1a1a), oransje aksent og glow (#ff7a00), hvitt for tekst/kontrast.
+- **Uttrykk:** Ren, moderne, tillitsvekkende. Ingen lekne eller cartoon-aktige elementer.
+- **Teknisk:** 16:9, passende for web. Transparent bakgrunn kun der bruker eksplisitt ber om det (f.eks. ikoner/knapper).
+
+## Eksempel på prompt-oppbygning
+
+```
+[Emne bruker ber om], 16:9 aspect ratio, dark background #0d0d0d, orange glow #ff7a00, text in Saira Condensed style bold condensed sans-serif, professional, industrial, Jæren Multiservice, high quality, web ready
+```
+
+For ikoner/knapper med transparent bakgrunn: legg til "transparent background" eller "no background" **unntatt** når bruker vil ha samme mørke bakgrunn.
+
+## Når du bruker regelen
+
+- Bruker sier f.eks.: "lag et bilde til …", "generer en knapp …", "lag ikon …", "lag illustrasjon …", "lag hero-bilde …".
+- Bruk **GenerateImage** med en konkret description som følger stilguiden over.
+- Lagre med passende filnavn i prosjektet (f.eks. under `public/images/` eller `src/assets/` avhengig av bruk).
+
+## Unntak
+
+- Ikke bruk bilde-generator for ren datavisualisering (grafer, diagrammer, tabeller) – bruk kode (f.eks. SVG/CSS/React).
+- Ikke bruk for å erstatte eksisterende fotografier bruker allerede har lastet opp.

@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark text-gray-100 font-sans antialiased;
+    background-color: #0d0d0d;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  /* Ingen hvit bakgrunn noe sted */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Fokus synlig med oransje aksent */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-dark;
+  }
+
+  /* Valg av tekst – oransje aksent */
+  ::selection {
+    @apply bg-accent/30 text-white;
+  }
+}
+
+@layer components {
+  /* Globale knapper – primær (oransje) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-accent text-white font-semibold text-lg uppercase tracking-wide transition-colors;
+    @apply hover:bg-accent/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+  }
+
+  /* Sekundær knapp – outline */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-gray-500 text-gray-200 font-semibold text-lg uppercase tracking-wide transition-colors;
+    @apply hover:border-accent hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+  }
+
+  /* Hero CTA – primær med glow og transform */
+  .hero-cta-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-accent text-white font-semibold text-lg uppercase tracking-wide transition-all duration-300;
+    @apply hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0);
+  }
+  .hero-cta-primary:hover {
+    box-shadow: 0 0 28px rgba(255, 122, 0, 0.45), 0 0 50px rgba(255, 122, 0, 0.2);
+  }
+
+  /* Hero CTA – sekundær med glow og transform */
+  .hero-cta-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-gray-400 text-gray-100 font-semibold text-lg uppercase tracking-wide transition-all duration-300;
+    @apply hover:border-accent hover:text-accent hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 focus-visible:ring-offset-dark;
+    box-shadow: 0 0 0 0 rgba(255, 122, 0, 0);
+  }
+  .hero-cta-secondary:hover {
+    box-shadow: 0 0 20px rgba(255, 122, 0, 0.25);
+  }
+
+  /* Tjenesteknapper – oransje kant + gul glow */
+  .service-card {
+    box-shadow:
+      0 0 0 1px rgba(255, 122, 0, 0.3),
+      0 0 16px rgba(255, 122, 0, 0.25),
+      0 0 32px rgba(255, 200, 80, 0.15);
+  }
+  .service-card:hover {
+    border-color: rgb(255, 122, 0);
+    box-shadow:
+      0 0 0 2px rgba(255, 122, 0, 0.5),
+      0 0 24px rgba(255, 122, 0, 0.4),
+      0 0 48px rgba(255, 220, 100, 0.25);
+  }
+
+  /* 3x3 tjenestegrid – subtil gul glow, hover øker */
+  .service-grid-card {
+    box-shadow: 0 0 25px rgba(255, 200, 0, 0.25);
+  }
+  .service-grid-card:hover {
+    box-shadow: 0 0 45px rgba(255, 200, 0, 0.45);
+  }
+
+  /* Subtil SVG-animasjon på tjenesteikoner */
+  .service-svg-icon {
+    animation: service-icon-pulse 3s ease-in-out infinite;
+  }
+  @keyframes service-icon-pulse {
+    0%, 100% { opacity: 0.85; }
+    50% { opacity: 1; }
+  }
+
+  /* Navbar CTA – glødende oransje, beveled, med pil */
+  .navbar-cta {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-lg uppercase tracking-wide text-black/90 whitespace-nowrap transition-all duration-300;
+    background: linear-gradient(180deg, #ff9a3d 0%, #e85d04 50%, #c44a02 100%);
+    box-shadow:
+      0 0 20px rgba(255, 122, 0, 0.6),
+      0 0 40px rgba(255, 122, 0, 0.35),
+      0 2px 0 0 rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+  }
+  .navbar-cta:hover {
+    box-shadow:
+      0 0 28px rgba(255, 122, 0, 0.7),
+      0 0 55px rgba(255, 122, 0, 0.4),
+      0 2px 0 0 rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+  }
+
+  /* ========== NAVBAR – helt som referansebildet ========== */
+  .navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 120px;
+    background: #000;
+  }
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0 1rem;
+    }
+  }
+
+  /* Toppmeny-bakgrunn: bilde med oransje glow og partikler */
+  .navbar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: #000 url(/images/navbar-bg.png) center center no-repeat;
+    background-size: cover;
+    pointer-events: none;
+  }
+
+  .navbar > div.relative {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .navbar .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Logo med intens oransje glow rundt */
+  .logo-wrap {
+    text-decoration: none;
+    filter: drop-shadow(0 0 20px rgba(255, 122, 0, 0.5)) drop-shadow(0 0 40px rgba(255, 122, 0, 0.25));
+  }
+  .logo-wrap:hover {
+    filter: drop-shadow(0 0 24px rgba(255, 122, 0, 0.6)) drop-shadow(0 0 50px rgba(255, 122, 0, 0.3));
+  }
+
+  .logo {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .nav-center a,
+  .nav-link {
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+  }
+  .nav-center a:hover,
+  .nav-link:hover {
+    color: #ff7a00;
+    text-shadow: 0 0 12px rgba(255, 122, 0, 0.7), 0 0 24px rgba(255, 122, 0, 0.35);
+  }
+  .nav-link-active {
+    color: #ff7a00 !important;
+    text-shadow: 0 0 14px rgba(255, 122, 0, 0.85), 0 0 28px rgba(255, 122, 0, 0.4);
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+
+  /* CTA – langstrakt hexagon, sølv tekst, mørk inni, oransje glødende kant */
+  .cta-btn {
+    padding: 8px 20px 8px 16px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 2px solid #ff7a00;
+    border-radius: 8px;
+
+    /* Langstrakt hexagon – avrundede hjørner, litt spiss høyre */
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
+
+    box-shadow:
+      0 0 18px rgba(255, 122, 0, 0.75),
+      0 0 36px rgba(255, 122, 0, 0.35),
+      inset 0 0 14px rgba(255, 122, 0, 0.12);
+
+    transition: 0.25s ease;
+  }
+
+  .cta-btn:hover {
+    color: #fff;
+    background: linear-gradient(180deg, #252525 0%, #0d0d0d 100%);
+    box-shadow:
+      0 0 24px rgba(255, 122, 0, 0.9),
+      0 0 48px rgba(255, 122, 0, 0.45),
+      inset 0 0 18px rgba(255, 122, 0, 0.18);
+  }
+
+  /* Oransje glow-linje nederst – tynn intens kjerne + diffus glow + spark-effekt */
+  .navbar-glow-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, #ff7a00 15%, #ff7a00 85%, transparent 100%);
+    box-shadow:
+      0 0 6px 1px rgba(255, 122, 0, 1),
+      0 0 20px 4px rgba(255, 122, 0, 0.7),
+      0 0 40px 8px rgba(255, 122, 0, 0.4);
+  }
+}
