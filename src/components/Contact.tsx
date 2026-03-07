@@ -1,5 +1,7 @@
 import { useState, FormEvent } from 'react'
 
+const FORMSPREE_URL = 'https://formspree.io/f/mzdjbypk'
+
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
@@ -8,26 +10,29 @@ export default function Contact() {
     setStatus('sending')
     const form = e.currentTarget
     const formData = new FormData(form)
+    // include subject for Formspree
+    formData.set('_subject', 'Ny forespørsel fra jaerenmultiservice.no')
+
     try {
-      const params = new URLSearchParams()
-      params.append('form-name', 'contact')
-      formData.forEach((value, key) => {
-        if (key !== 'form-name') params.append(key, String(value))
-      })
-      const res = await fetch('/', {
+      const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: params.toString(),
+        headers: { Accept: 'application/json' },
+        body: formData,
       })
-      if (res.ok) setStatus('sent')
-      else setStatus('error')
+      if (res.ok) {
+        setStatus('sent')
+        form.reset()
+      } else {
+        setStatus('error')
+      }
     } catch {
       setStatus('error')
     }
   }
 
-  const inputClass = "w-full px-4 py-3 bg-dark border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-  const labelClass = "block text-sm font-medium text-gray-300 mb-2"
+  const inputClass =
+    'w-full px-4 py-3 bg-dark border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent'
+  const labelClass = 'block text-sm font-medium text-gray-300 mb-2'
 
   return (
     <section id="befaring" className="py-20 md:py-28 bg-dark-section border-y border-gray-800 scroll-mt-[140px]">
@@ -38,64 +43,64 @@ export default function Contact() {
         <p className="mt-4 text-gray-400 text-center text-lg">
           Send forespørsel – vi tar kontakt for en uforpliktende befaring og skriftlig tilbud.
         </p>
-        <form
-          name="contact"
-          method="POST"
-          action="/"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-          className="mt-12 space-y-6"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-          <p hidden>
-            <label>Ikke fyll ut dette: <input name="bot-field" aria-hidden="true" tabIndex={-1} /></label>
-          </p>
+
+        <form onSubmit={handleSubmit} method="POST" action={FORMSPREE_URL} className="mt-12 space-y-6">
+          <input type="hidden" name="_subject" value="Ny forespørsel fra jaerenmultiservice.no" />
 
           <div>
-            <label htmlFor="name" className={labelClass}>Navn</label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Navn"
-              required
-              className={inputClass}
-            />
+            <label htmlFor="name" className={labelClass}>
+              Navn
+            </label>
+            <input id="name" name="name" type="text" required className={inputClass} placeholder="Ditt fulle navn" />
           </div>
+
           <div>
-            <label htmlFor="email" className={labelClass}>E-post</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="E-post"
-              required
-              className={inputClass}
-            />
+            <label htmlFor="phone" className={labelClass}>
+              Telefonnummer
+            </label>
+            <input id="phone" name="phone" type="tel" required className={inputClass} placeholder="F.eks. 123 45 678" />
           </div>
+
           <div>
-            <label htmlFor="message" className={labelClass}>Melding</label>
+            <label htmlFor="email" className={labelClass}>
+              E-post
+            </label>
+            <input id="email" name="email" type="email" required className={inputClass} placeholder="din@epost.no" />
+          </div>
+
+          <div>
+            <label htmlFor="service" className={labelClass}>
+              Hvilken tjeneste
+            </label>
+            <select id="service" name="service" required className={inputClass}>
+              <option value="">Velg tjeneste</option>
+              <option>Takvask</option>
+              <option>Høytrykkspyling</option>
+              <option>Hekkeklipp</option>
+              <option>Gravearbeid</option>
+              <option>Drenering</option>
+              <option>Takrennerens</option>
+              <option>Fasadevask</option>
+              <option>Steinlegging</option>
+              <option>Snørydding</option>
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="description" className={labelClass}>
+              Beskrivelse
+            </label>
             <textarea
-              id="message"
+              id="description"
               name="message"
-              placeholder="Melding"
-              rows={5}
-              required
+              rows={4}
               className={`${inputClass} resize-y`}
+              placeholder="Kort beskrivelse av oppgaven eller adresse …"
             />
           </div>
 
-          {status === 'sent' && (
-            <p className="text-accent font-medium">
-              Takk! Vi tar kontakt så snart vi kan.
-            </p>
-          )}
-          {status === 'error' && (
-            <p className="text-red-400">
-              Noe gikk galt. Prøv igjen eller ring oss.
-            </p>
-          )}
+          {status === 'sent' && <p className="text-accent font-medium">Takk! Vi tar kontakt så snart vi kan.</p>}
+          {status === 'error' && <p className="text-red-400">Noe gikk galt. Prøv igjen eller ring oss.</p>}
 
           <button
             type="submit"
@@ -106,6 +111,4 @@ export default function Contact() {
           </button>
         </form>
       </div>
-    </section>
-  )
-}
+    </section>\n  )\n }\n*** End Patch"}
