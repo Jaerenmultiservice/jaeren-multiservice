@@ -141,7 +141,7 @@
     left: 0;
     width: 100%;
     height: 120px;
-    background: #000 url(/images/navbar-bg.png) center center no-repeat;
+    background: #000 url(/images/navbar-bg-1200.jpg) center center no-repeat;
     background-size: cover;
     pointer-events: none;
   }
@@ -258,5 +258,90 @@
       0 0 6px 1px rgba(255, 122, 0, 1),
       0 0 20px 4px rgba(255, 122, 0, 0.7),
       0 0 40px 8px rgba(255, 122, 0, 0.4);
+  }
+}
+
+/* Legacy plain-CSS service styles (converted) */
+.legacy-services {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.legacy-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.legacy-service-card {
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.legacy-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.legacy-service-card h3 {
+  color: #ff7a00;
+  margin-bottom: 15px;
+}
+
+.legacy-service-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.legacy-service-card li {
+  margin-bottom: 6px;
+}
+
+.legacy-service-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #ff7a00;
+  padding: 10px 18px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+/* Typography scale — reusable classes for the project */
+@layer components {
+  /* Hero */
+  .ty-hero-h1 {
+    @apply text-5xl md:text-6xl font-bold tracking-tight leading-tight;
+  }
+  .ty-hero-sub {
+    @apply text-lg md:text-xl text-gray-300 leading-relaxed;
+  }
+
+  /* Section headings */
+  .ty-section-h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+  }
+
+  /* Card / Service */
+  .ty-card-title {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  .ty-card-desc {
+    @apply text-base text-gray-400 leading-relaxed;
+  }
+  .ty-card-list {
+    @apply text-sm text-gray-300;
+  }
+
+  /* Body and small text */
+  .ty-body {
+    @apply text-base;
+  }
+  .ty-small {
+    @apply text-sm text-gray-400;
   }
 }

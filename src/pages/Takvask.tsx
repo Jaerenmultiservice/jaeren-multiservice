@@ -8,7 +8,7 @@ export default function Takvask() {
       <ServicePageLayout
         title="Takvask"
         intro="Profesjonell takvask for bolig og bedrift. Vi forlenger levetiden på taket med trygg og skånsom rens – og gir deg et rent, holdbart resultat."
-        heroImagePlaceholder="takvask"
+        heroImage="/images/takvask-hero.svg"
         howWeDoIt={[
           'Grundig inspeksjon av tak og beslag',
           'Skånsom rens av takflater',

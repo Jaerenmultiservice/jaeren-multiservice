@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80" role="img" aria-label="Jæren Multiservice logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff7a00"/>
+      <stop offset="1" stop-color="#ffd27a"/>
+    </linearGradient>
+    <style>
+      .s{font-family: 'Saira Condensed', Arial, sans-serif; font-weight:700; font-size:28px; fill:#fff}
+    </style>
+  </defs>
+  <rect width="240" height="80" rx="8" fill="#0d0d0d"/>
+  <g transform="translate(12,10)">
+    <rect x="0" y="0" width="56" height="56" rx="6" fill="url(#g)"/>
+    <text x="28" y="38" font-family="Saira Condensed, Arial, sans-serif" font-weight="800" font-size="28" fill="#0b0b0b" text-anchor="middle" alignment-baseline="middle">JM</text>
+  </g>
+  <text x="86" y="46" class="s">Jæren Multiservice</text>
+</svg>

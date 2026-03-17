@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Jæren Multiservice logo (clean)">
+  <defs>
+    <!-- Convert image luminance to alpha, then threshold to create a mask -->
+    <filter id="lumToAlpha">
+      <feColorMatrix type="luminanceToAlpha"/>
+      <feComponentTransfer>
+        <!-- Threshold: values close to 0 stay 0 (transparent), brighter become 1 -->
+        <feFuncA type="table" tableValues="0 1"/>
+      </feComponentTransfer>
+    </filter>
+
+    <mask id="logoMask" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="80">
+      <!-- Use the raster image filtered to produce an alpha mask -->
+      <image href="src/assets/logo.png" x="0" y="0" width="240" height="80" filter="url(#lumToAlpha)" preserveAspectRatio="xMidYMid slice" />
+    </mask>
+  </defs>
+
+  <!-- Draw the original image but masked so dark background becomes transparent -->
+  <image href="src/assets/logo.png" x="0" y="0" width="240" height="80" preserveAspectRatio="xMidYMid slice" mask="url(#logoMask)" />
+</svg>

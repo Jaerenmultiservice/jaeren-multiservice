@@ -1,40 +1,40 @@
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative min-h-[70vh] flex items-center bg-black overflow-hidden scroll-mt-[140px]"
-      aria-label="Hovedseksjon"
-    >
-      {/* Subtil bakgrunn gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-black" aria-hidden />
+    <section className="relative bg-black text-white min-h-[78vh] flex items-center justify-center text-center overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-900 to-black opacity-90" />
+      <div className="absolute w-[700px] h-[700px] bg-orange-500/10 blur-[160px] rounded-full" />
 
-      {/* Content – smalere og mindre vertikal luft */}
-      <div className="relative z-10 max-w-[640px] mx-auto px-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-          Profesjonelle tjenester i Jæren
+      <div className="relative z-10 max-w-4xl px-6">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-[0.95] mb-6">
+          Alt innen hage og hjem
         </h1>
 
-        <p className="text-base md:text-lg text-gray-300 max-w-[540px] mb-5">
-          Takvask, fasadevask, gravearbeid og vedlikehold for private og bedrifter i
-          Sandnes, Stavanger og omegn.
+        <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10">
+          Fra takvask og hagearbeid til gravearbeid og smarthus – vi tar jobben.
         </p>
 
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#befaring"
-            className="bg-[#ff7a00] hover:bg-[#e56700] text-white px-6 py-3 rounded-lg font-semibold transition"
+            href="#kontakt"
+            className="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-lg font-semibold text-base transition"
           >
-            Få gratis befaring
+            Gratis befaring
           </a>
 
           <a
             href="#tjenester"
-            className="border border-gray-600 hover:border-white text-white px-6 py-3 rounded-lg font-semibold transition"
+            className="border border-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-white hover:text-black transition"
           >
-            Se våre tjenester
+            Se tjenester
           </a>
+        </div>
+
+        <div className="mt-8 text-sm md:text-base text-gray-400 flex flex-wrap justify-center gap-6">
+          <span>✔ Lokal bedrift i Jæren</span>
+          <span>✔ Rask respons</span>
+          <span>✔ Gratis befaring</span>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -5,6 +5,12 @@ export type ServicePageLayoutProps = {
   title: string
   intro: string
   heroImagePlaceholder?: string
+  /**
+   * Optional hero image path (public). When provided, this image will be used
+   * as the hero background instead of the built-in gradient placeholders.
+   * Example: "/images/takvask-hero.svg" or "/images/takvask-hero.jpg"
+   */
+  heroImage?: string
   howWeDoIt: string[]
   whyWorthIt: string[]
   recommendedAddons: string[]
@@ -16,6 +22,7 @@ export default function ServicePageLayout({
   title,
   intro,
   heroImagePlaceholder = 'default',
+  heroImage,
   howWeDoIt,
   whyWorthIt,
   recommendedAddons,
@@ -35,7 +42,13 @@ export default function ServicePageLayout({
     <div className="min-h-screen bg-dark flex flex-col">
       {/* Hero for tjenesten */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden bg-dark">
-        <div className="absolute inset-0 opacity-90" style={{ background: heroBg }} aria-hidden />
+        {heroImage ? (
+          <div className="absolute inset-0">
+            <img src={heroImage} alt={`${title} hero`} className="w-full h-full object-cover" />
+          </div>
+        ) : (
+          <div className="absolute inset-0 opacity-90" style={{ background: heroBg }} aria-hidden />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-black/20" aria-hidden />
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 md:py-24">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white uppercase tracking-tight">

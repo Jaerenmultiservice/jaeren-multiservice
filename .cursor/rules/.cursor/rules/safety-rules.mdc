@@ -1,0 +1,18 @@
+# Safety Rules
+
+Never delete large sections of HTML unless explicitly requested.
+
+Never overwrite entire files unless asked.
+
+Preserve existing layout structure.
+
+Before editing:
+Check surrounding code.
+
+When modifying:
+Make minimal changes needed.
+
+Avoid:
+Breaking CSS classes
+Removing IDs used by scripts
+Changing file structure unnecessarily

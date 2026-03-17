@@ -1,0 +1,14 @@
+# Layout Rules
+
+Page sections should follow this order:
+
+Hero
+Services
+About
+Call to action
+Contact
+
+Use grid layout for services.
+Mobile-first design.
+Consistent spacing.
+Maintain clear visual hierarchy.

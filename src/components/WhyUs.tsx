@@ -32,11 +32,12 @@ export default function WhyUs() {
   return (
     <section id="hvorfor" className="py-20 md:py-28 bg-dark scroll-mt-[140px]">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight text-center">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
           Hvorfor velge oss
         </h2>
-        <p className="mt-4 text-gray-400 text-center max-w-2xl mx-auto text-lg">
-          Vi er opptatt av å levere seriøst og forutsigbart – for private og bedrifter.
+
+        <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">
+          Vi er opptatt av å levere seriøst og forutsigbart arbeid for private og bedrifter.
         </p>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
           {points.map((point) => (
@@ -45,8 +46,8 @@ export default function WhyUs() {
               className="text-center"
             >
               <div className="flex justify-center">{point.icon}</div>
-              <h3 className="mt-4 text-xl font-bold text-white uppercase">{point.title}</h3>
-              <p className="mt-3 text-gray-400">{point.description}</p>
+              <h3 className="text-xl font-semibold mb-3">{point.title}</h3>
+              <p className="text-base text-gray-400 leading-relaxed">{point.description}</p>
             </div>
           ))}
         </div>

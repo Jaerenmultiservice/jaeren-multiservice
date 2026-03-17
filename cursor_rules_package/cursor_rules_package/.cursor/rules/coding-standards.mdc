@@ -1,0 +1,19 @@
+# Coding Standards
+
+HTML:
+Use semantic HTML
+Keep structure clean
+Do not break layout
+
+CSS:
+Organize styles logically
+Avoid inline styles when possible
+
+JavaScript:
+Minimal JS
+Avoid unnecessary libraries
+
+General:
+Maintain readability
+Do not remove working code without reason
+Preserve responsive layout

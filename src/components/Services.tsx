@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
 const MAIN_SERVICES = [
-  { title: "Takvask", link: "/takvask", image: "/images/services/takvask2.png", description: "Profesjonell takvask og vedlikehold for bolig og næring." },
-  { title: "Fasadevask", link: "/fasadevask", image: "/images/services/fasadevask2.png", description: "Rens av fasader, inngangspartier og utvendige flater." },
-  { title: "Hagearbeid", link: "/hagearbeid", image: "/images/services/hagearbeid2.png", description: "Hekkeklipp, plenklipp og generelt hagevedlikehold." },
-  { title: "Gravearbeid", link: "/gravearbeid", image: "/images/services/gravearbeid2.png", description: "Graving, drenering og rydding av tomter og oppkjørsel." },
-  { title: "Kattedør", link: "/kattedor", image: "/images/services/kattedør2.png", description: "Montering og tilpasning av kattedører." },
-  { title: "Takrens", link: "/takrennerens", image: "/images/services/takrens2.png", description: "Rens og vedlikehold av takrenner og nedløp." },
+  { title: "Takvask", link: "/takvask", image: "/images/services/rengjoring-hus.png", description: "Profesjonell takvask og vedlikehold for bolig og næring." },
+  { title: "Fasadevask", link: "/fasadevask", image: "/images/services/rengjoring-hus.png", description: "Rens av fasader, inngangspartier og utvendige flater." },
+  { title: "Hagearbeid", link: "/hagearbeid", image: "/images/services/gartner.png", description: "Hekkeklipp, plenklipp og generelt hagevedlikehold." },
+  { title: "Gravearbeid", link: "/gravearbeid", image: "/images/services/gravearbeid-arbeid.png", description: "Graving, drenering og rydding av tomter og oppkjørsel." },
+  { title: "Kattedør", link: "/kattedor", image: "/images/services/smarthjem.png", description: "Montering og tilpasning av kattedører." },
+  { title: "Takrens", link: "/takrennerens", image: "/images/services/rengjoring-hus.png", description: "Rens og vedlikehold av takrenner og nedløp." },
 ];
 
 export default function Services() {

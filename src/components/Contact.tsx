@@ -30,21 +30,23 @@ export default function Contact() {
     }
   }
 
-  const inputClass =
-    'w-full px-4 py-3 bg-dark border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent'
-  const labelClass = 'block text-sm font-medium text-gray-300 mb-2'
+  const labelClass = 'block text-base font-medium text-gray-200 mb-2'
+
+  const inputClass = 'h-14 w-full bg-transparent border border-neutral-700 px-4 text-base text-white placeholder:text-gray-500'
+  const textareaClass = 'min-h-[160px] w-full bg-transparent border border-neutral-700 px-4 py-4 text-base text-white placeholder:text-gray-500'
 
   return (
     <section id="befaring" className="py-20 md:py-28 bg-dark-section border-y border-gray-800 scroll-mt-[140px]">
       <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-white uppercase tracking-tight text-center">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
           Få gratis befaring
         </h2>
-        <p className="mt-4 text-gray-400 text-center text-lg">
+
+        <p className="text-base md:text-lg text-gray-400 mb-10">
           Send forespørsel – vi tar kontakt for en uforpliktende befaring og skriftlig tilbud.
         </p>
 
-        <form onSubmit={handleSubmit} method="POST" action={FORMSPREE_URL} className="mt-12 space-y-6">
+        <form onSubmit={handleSubmit} method="POST" action={FORMSPREE_URL} className="mt-6 space-y-6">
           <input type="hidden" name="_subject" value="Ny forespørsel fra jaerenmultiservice.no" />
 
           <div>
@@ -93,8 +95,7 @@ export default function Contact() {
             <textarea
               id="description"
               name="message"
-              rows={4}
-              className={`${inputClass} resize-y`}
+              className={textareaClass}
               placeholder="Kort beskrivelse av oppgaven eller adresse …"
             />
           </div>
@@ -105,10 +106,13 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="w-full py-4 bg-accent text-white font-semibold text-lg uppercase tracking-wide hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-dark-section disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+            className="h-14 w-full bg-orange-500 hover:bg-orange-600 text-base font-semibold"
           >
             {status === 'sending' ? 'Sender …' : 'Send melding'}
           </button>
         </form>
       </div>
-    </section>\n  )\n }\n*** End Patch"}
+    </section>
+  )
+}
+

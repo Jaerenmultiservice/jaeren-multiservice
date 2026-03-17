@@ -1,11 +1,5 @@
-import logo from "../assets/logo.png";
+import clean from "../assets/logo-clean.svg";
 
 export default function NavbarLogo() {
-  return (
-    <img
-      src={logo}
-      alt="Jæren Multiservice"
-      className="logo"
-    />
-  );
+  return <img src={clean} alt="Jæren Multiservice" className="logo" />;
 }

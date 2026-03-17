@@ -3,7 +3,7 @@ import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
 import Layout from './components/Layout'
 import Hero from './components/Hero'
-import Services from './components/Services'
+import ServiceCards from '@/components/ServiceCards'
 import WhyUs from './components/WhyUs'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -20,7 +20,7 @@ function HomePage() {
   return (
     <Layout fullWidth>
       <Hero />
-      <Services />
+      <ServiceCards />
       <WhyUs />
       <Contact />
       <Footer />
