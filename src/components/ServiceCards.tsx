@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Home, TreePine, Wrench, Cpu } from "lucide-react";
 
 const services = [
@@ -8,6 +9,7 @@ const services = [
       "Takvask, fasadevask, takrennerens og høytrykkspyling av uteområder.",
     items: ["Takvask", "Fasadevask", "Takrennerens", "Avløpsrens"],
     image: "/images/services/rengjoring-hus.png",
+    link: "/takvask",
   },
   {
     title: "Hagearbeid",
@@ -16,6 +18,7 @@ const services = [
       "Vedlikehold av hage og uteområder for private boliger og eiendommer.",
     items: ["Hekkeklipp", "Plenklipp", "Hagevedlikehold", "Rydding"],
     image: "/images/services/gartner.png",
+    link: "/hagearbeid",
   },
   {
     title: "Gravearbeid",
@@ -24,6 +27,7 @@ const services = [
       "Mindre gravearbeid og klargjøring av tomt, drenering og oppkjørsel.",
     items: ["Graving", "Drenering", "Oppkjørsel", "Tomtearbeid"],
     image: "/images/services/gravearbeid-arbeid.png",
+    link: "/graving",
   },
   {
     title: "Smart Hjem & Teknisk Hjelp",
@@ -32,6 +36,7 @@ const services = [
       "Installasjon av smarthus, nettverk, WiFi og teknisk hjelp hjemme.",
     items: ["Smarthus", "WiFi & nettverk", "PC-hjelp", "Feilsøking"],
     image: "/images/services/smarthjem.png",
+    link: "/smarthjem",
   },
 ];
 
@@ -56,9 +61,11 @@ export default function ServiceCards() {
             
 
             return (
-              <div
+              <Link
                 key={i}
-                className="group bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 hover:border-orange-500 transition-all duration-300 hover:-translate-y-1"
+                to={service.link}
+                className="service-card group block bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 hover:border-orange-500 transition-all duration-300 hover:-translate-y-1"
+                aria-label={`${service.title} – les mer`}
               >
                 <div className="w-full h-40 bg-black/20 overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
@@ -79,11 +86,11 @@ export default function ServiceCards() {
                     ))}
                   </ul>
 
-                  <button className="text-orange-500 font-semibold group-hover:underline">
+                  <span className="text-orange-500 font-semibold group-hover:underline">
                     Les mer →
-                  </button>
+                  </span>
                 </div>
-              </div>
+              </Link>
             );
           })}
 

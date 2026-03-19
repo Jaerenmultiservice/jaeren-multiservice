@@ -1,31 +1,31 @@
 import { Link } from "react-router-dom";
 
-function Takvask() {
+function Hage() {
   return (
     <>
       <div className="relative w-full h-[60vh] overflow-hidden">
         <img
-          src="/images/takvask.jpg"
-          alt="Takvask"
+          src="/images/hage.jpg"
+          alt="Hagearbeid"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white">
-            Takvask
+            Hagearbeid
           </h1>
         </div>
       </div>
 
       <section>
-        <h1>Takvask</h1>
+        <h1>Hagearbeid</h1>
 
         <div className="grid">
-          <Link to="/takvask/takrens">Takrens</Link>
-          <Link to="/takvask/impregnering">Impregnering</Link>
+          <Link to="/hagearbeid/hekk">Hekkeklipp</Link>
+          <Link to="/hagearbeid/rydding">Rydding</Link>
         </div>
       </section>
     </>
   );
 }
 
-export default Takvask;
+export default Hage;

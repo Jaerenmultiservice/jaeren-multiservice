@@ -6,7 +6,7 @@ const MAIN_SERVICES = [
   { title: "Hagearbeid", link: "/hagearbeid", image: "/images/services/gartner.png", description: "Hekkeklipp, plenklipp og generelt hagevedlikehold." },
   { title: "Gravearbeid", link: "/gravearbeid", image: "/images/services/gravearbeid-arbeid.png", description: "Graving, drenering og rydding av tomter og oppkjørsel." },
   { title: "Kattedør", link: "/kattedor", image: "/images/services/smarthjem.png", description: "Montering og tilpasning av kattedører." },
-  { title: "Takrens", link: "/takrennerens", image: "/images/services/rengjoring-hus.png", description: "Rens og vedlikehold av takrenner og nedløp." },
+  { title: "Takrens", link: "/takvask/takrens", image: "/images/services/rengjoring-hus.png", description: "Fjerning av mose, skitt og begroing." },
 ];
 
 export default function Services() {

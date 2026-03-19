@@ -1,64 +1,55 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
-import ScrollToTop from './components/ScrollToTop'
-import Navbar from './components/Navbar'
-import Layout from './components/Layout'
-import Hero from './components/Hero'
-import ServiceCards from '@/components/ServiceCards'
-import WhyUs from './components/WhyUs'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import Takvask from './pages/Takvask'
-import Hoytrykk from './pages/Hoytrykk'
-import Hekkeklipp from './pages/Hekkeklipp'
-import Hagearbeid from './pages/Hagearbeid'
-import Gravearbeid from './pages/Gravearbeid'
-import OmOss from './pages/OmOss'
-import TjenestePlaceholder from './pages/TjenestePlaceholder'
-import TjenesterPage from './pages/TjenesterPage'
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
-function HomePage() {
-  return (
-    <Layout fullWidth>
-      <Hero />
-      <ServiceCards />
-      <WhyUs />
-      <Contact />
-      <Footer />
-    </Layout>
-  )
-}
+import Home from "./pages/Home";
 
-export default function App() {
+// TAK
+import Takvask from "./pages/Takvask";
+import Takrens from "./pages/tak/Takrens";
+import TakImpregnering from "./pages/tak/TakImpregnering";
+
+// HAGE
+import Hage from "./pages/Hage";
+import Hekk from "./pages/hage/Hekk";
+import Rydding from "./pages/hage/Rydding";
+
+// GRAVING
+import Graving from "./pages/Graving";
+import Planering from "./pages/graving/Planering";
+import Drenering from "./pages/graving/Drenering";
+
+// SMART
+import Smarthjem from "./pages/Smarthjem";
+import SmarthjemInstallasjon from "./pages/smart/Installasjon";
+import SmarthjemFeilsok from "./pages/smart/Feilsok";
+
+function App() {
   return (
-    <>
-      <ScrollToTop />
-      <Navbar />
-      <main>
-        <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/om-oss" element={<OmOss />} />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+        {/* TAK */}
         <Route path="/takvask" element={<Takvask />} />
-        <Route path="/hoytrykk" element={<Hoytrykk />} />
-        <Route path="/hekkeklipp" element={<Hekkeklipp />} />
-        <Route path="/hagearbeid" element={<Hagearbeid />} />
-        <Route path="/gravearbeid" element={<Gravearbeid />} />
-        <Route path="/drenering" element={<TjenestePlaceholder title="Drenering" desc="Rør, sluk og dreneringsløsninger" />} />
-        <Route path="/kattedor" element={<TjenestePlaceholder title="Kattedør" desc="Montering og tilpasning av kattedører" />} />
-        <Route path="/takrennerens" element={<TjenestePlaceholder title="Takrennerens" desc="Rens og vedlikehold av takrenner" />} />
-        <Route path="/fasadevask" element={<TjenestePlaceholder title="Fasadevask" desc="Profesjonell rens av fasader" />} />
-        <Route path="/steinlegging" element={<TjenestePlaceholder title="Steinlegging" desc="Terrasse, oppkjørsel og mur" />} />
-        <Route path="/snorydding" element={<TjenestePlaceholder title="Snørydding" desc="Rydding og salting" />} />
-        <Route path="/tjenester" element={<TjenesterPage />} />
-        <Route path="/kontakt" element={<Navigate to="/#befaring" replace />} />
-        <Route path="/plenklipp" element={<TjenestePlaceholder title="Plenklipp" desc="Plenklipp og hagevedlikehold" />} />
-        <Route path="/maling" element={<TjenestePlaceholder title="Maling" desc="Innvendig og utvendig maling" />} />
-        <Route path="/vinduspuss" element={<TjenestePlaceholder title="Vinduspuss" desc="Profesjonell vindusvask" />} />
-        <Route path="/sandblasting" element={<TjenestePlaceholder title="Sandblasting" desc="Overflatebehandling og rens" />} />
-        <Route path="/flislegging" element={<TjenestePlaceholder title="Flislegging" desc="Fliser innendørs og utendørs" />} />
-        <Route path="/trearbeid" element={<TjenestePlaceholder title="Trearbeid" desc="Bygg og reparasjon i tre" />} />
-        <Route path="/trailer" element={<TjenestePlaceholder title="Trailer" desc="Transport og frakt" />} />
-        </Routes>
-      </main>
-    </>
-  )
+        <Route path="/takvask/takrens" element={<Takrens />} />
+        <Route path="/takvask/impregnering" element={<TakImpregnering />} />
+
+        {/* HAGE */}
+        <Route path="/hagearbeid" element={<Hage />} />
+        <Route path="/hagearbeid/hekk" element={<Hekk />} />
+        <Route path="/hagearbeid/rydding" element={<Rydding />} />
+
+        {/* GRAVING */}
+        <Route path="/graving" element={<Graving />} />
+        <Route path="/graving/planering" element={<Planering />} />
+        <Route path="/graving/drenering" element={<Drenering />} />
+
+        {/* SMART */}
+        <Route path="/smarthjem" element={<Smarthjem />} />
+        <Route path="/smarthjem/installasjon" element={<SmarthjemInstallasjon />} />
+        <Route path="/smarthjem/feilsok" element={<SmarthjemFeilsok />} />
+      </Routes>
+    </Router>
+  );
 }
+
+export default App;

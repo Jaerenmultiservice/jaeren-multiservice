@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react'
 
-const FORMSPREE_URL = 'https://formspree.io/f/mzdjbypk'
+const FORMSPREE_URL = 'https://formspree.io/f/mgonpjya'
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -53,50 +53,26 @@ export default function Contact() {
             <label htmlFor="name" className={labelClass}>
               Navn
             </label>
-            <input id="name" name="name" type="text" required className={inputClass} placeholder="Ditt fulle navn" />
-          </div>
-
-          <div>
-            <label htmlFor="phone" className={labelClass}>
-              Telefonnummer
-            </label>
-            <input id="phone" name="phone" type="tel" required className={inputClass} placeholder="F.eks. 123 45 678" />
+            <input id="name" name="name" type="text" required className={inputClass} placeholder="Navn" />
           </div>
 
           <div>
             <label htmlFor="email" className={labelClass}>
               E-post
             </label>
-            <input id="email" name="email" type="email" required className={inputClass} placeholder="din@epost.no" />
+            <input id="email" name="email" type="email" required className={inputClass} placeholder="E-post" />
           </div>
 
           <div>
-            <label htmlFor="service" className={labelClass}>
-              Hvilken tjeneste
-            </label>
-            <select id="service" name="service" required className={inputClass}>
-              <option value="">Velg tjeneste</option>
-              <option>Takvask</option>
-              <option>Høytrykkspyling</option>
-              <option>Hekkeklipp</option>
-              <option>Gravearbeid</option>
-              <option>Drenering</option>
-              <option>Takrennerens</option>
-              <option>Fasadevask</option>
-              <option>Steinlegging</option>
-              <option>Snørydding</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="description" className={labelClass}>
-              Beskrivelse
+            <label htmlFor="message" className={labelClass}>
+              Melding
             </label>
             <textarea
-              id="description"
+              id="message"
               name="message"
+              required
               className={textareaClass}
-              placeholder="Kort beskrivelse av oppgaven eller adresse …"
+              placeholder="Hva trenger du hjelp med?"
             />
           </div>
 
@@ -106,9 +82,9 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === 'sending'}
-            className="h-14 w-full bg-orange-500 hover:bg-orange-600 text-base font-semibold"
+            className="h-14 w-full bg-orange-500 hover:bg-orange-600 text-white text-base font-semibold rounded-lg transition-colors disabled:opacity-70"
           >
-            {status === 'sending' ? 'Sender …' : 'Send melding'}
+            {status === 'sending' ? 'Sender …' : 'Send'}
           </button>
         </form>
       </div>
