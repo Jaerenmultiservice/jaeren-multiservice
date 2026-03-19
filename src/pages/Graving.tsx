@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
 
 function Graving() {
   return (
     <>
-      <div className="relative w-full h-[60vh] overflow-hidden">
-        <img
-          src="/images/graving.jpg"
-          alt="Graving"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
+      <Hero image="/images/graving.jpg" title="Gravearbeid" position="center" />
+
+      <section className="max-w-4xl mx-auto px-4">
+        <h2 className="text-2xl font-semibold mt-10 mb-4">Velg tjeneste</h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link to="/graving/graving" className="btn-secondary">
             Graving
-          </h1>
-        </div>
-      </div>
-
-      <section>
-        <h1>Gravearbeid</h1>
-
-        <div className="grid">
-          <Link to="/graving/planering">Planering</Link>
-          <Link to="/graving/drenering">Drenering</Link>
+          </Link>
+          <Link to="/graving/drenering" className="btn-secondary">
+            Drenering
+          </Link>
+          <Link to="/graving/oppkjoring" className="btn-secondary">
+            Oppkjørsel
+          </Link>
+          <Link to="/graving/tomtearbeid" className="btn-secondary">
+            Tomtearbeid
+          </Link>
         </div>
       </section>
     </>

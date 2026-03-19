@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
 
 function Smarthjem() {
   return (
     <>
-      <div className="relative w-full h-[60vh] overflow-hidden">
-        <img
-          src="/images/smarthjem.jpg"
-          alt="Smarthjem"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
-            Smarthjem
-          </h1>
-        </div>
-      </div>
+      <Hero image="/images/smarthjem.jpg" title="Smarthjem" position="center" />
 
-      <section>
-        <h1>Smarthjem</h1>
+      <section className="max-w-4xl mx-auto px-4">
+        <h2 className="text-2xl font-semibold mt-10 mb-4">Velg tjeneste</h2>
 
-        <div className="grid">
-          <Link to="/smarthjem/installasjon">Installasjon</Link>
-          <Link to="/smarthjem/feilsok">Feilsøking</Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link to="/smarthjem/smarthus" className="btn-secondary">
+            Smarthus
+          </Link>
+          <Link to="/smarthjem/wifi" className="btn-secondary">
+            WiFi & nettverk
+          </Link>
+          <Link to="/smarthjem/pc" className="btn-secondary">
+            PC-hjelp
+          </Link>
+          <Link to="/smarthjem/feilsoking" className="btn-secondary">
+            Feilsøking
+          </Link>
         </div>
       </section>
     </>

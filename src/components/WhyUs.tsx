@@ -1,6 +1,6 @@
 export default function WhyUs() {
   return (
-    <section id="hvorfor" className="why-us py-20 md:py-28 bg-black scroll-mt-[140px]">
+    <section id="om" className="why-us py-20 md:py-28 bg-black scroll-mt-[140px]">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-12">
           Hvorfor velge oss

@@ -1,44 +1,37 @@
-import { Link } from "react-router-dom";
-import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
+import { useNavigate } from "react-router-dom";
 
-function Takrens() {
+export default function Takrens() {
+  const navigate = useNavigate();
   return (
-    <>
-      <section>
-        <h1>Takrens i Jæren</h1>
-        <p className="lead">
-          Profesjonell fjerning av mose, alger og skitt – utført skånsomt og effektivt.
-        </p>
-        <div className="trust">
-          <span>✔ Lokalt firma</span>
-          <span>✔ Rask respons</span>
-          <span>✔ Gratis befaring</span>
-        </div>
-        <h2>Hvordan vi utfører jobben</h2>
-        <p>
-          Vi bruker profesjonelt utstyr med riktig trykk og metode tilpasset taktype. Dette sikrer effektiv rengjøring uten skade på takstein.
-        </p>
-        <h2>Hvorfor er dette viktig?</h2>
-        <p>
-          Mose holder på fukt og kan føre til frostsprengning og slitasje. Regelmessig vedlikehold forlenger levetiden på taket betydelig.
-        </p>
-        <div className="price-box">
-          <h3>Pris</h3>
-          <p>Fra 3.000 kr</p>
-        </div>
-        <div className="upsell">
-          <h2>Anbefalt tillegg</h2>
-          <p>Vi anbefaler impregnering etter rens for å beskytte taket og redusere fremtidig vedlikehold.</p>
-        </div>
-        <Link to="/" state={{ scrollTo: "befaring" }} className="btn-primary">
-          Få gratis befaring
-        </Link>
-      </section>
-      <Contact />
-      <Footer />
-    </>
+    <section className="max-w-4xl mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold mb-4">Takrens</h1>
+      <p className="mb-6">
+        Takrens fjerner skitt, alger og belegg som over tid bryter ned taket. Regelmessig rens bidrar til lengre levetid og et penere utseende på boligen.
+      </p>
+      <h2 className="text-xl font-semibold mb-2">Hvordan vi jobber</h2>
+      <ul className="mb-6 list-disc pl-5">
+        <li>Gratis befaring</li>
+        <li>Skånsom og effektiv rens</li>
+        <li>Kontroll av resultat</li>
+      </ul>
+      <h2 className="text-xl font-semibold mb-2">Anbefalt tillegg</h2>
+      <ul className="mb-6 list-disc pl-5">
+        <li>Mosefjerning</li>
+        <li>Impregnering (anbefales for lengre effekt)</li>
+        <li>Rens av takrenner</li>
+      </ul>
+      <button
+        type="button"
+        className="btn-primary"
+        onClick={() => {
+          navigate("/");
+          setTimeout(() => {
+            document.getElementById("befaring")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 150);
+        }}
+      >
+        Bestill befaring
+      </button>
+    </section>
   );
 }
-
-export default Takrens;

@@ -13,27 +13,27 @@ body {
   color: #fff;
 }
 
-/* LAYOUT */
-section {
+/* LAYOUT – kun enkle undersider uten Tailwind på <section> */
+section:not([class]) {
   max-width: 1100px;
   margin: auto;
   padding: 80px 20px;
 }
 
-/* HERO */
+/* HERO (klassen brukes på forsiden sammen med Tailwind) */
 .hero {
   text-align: center;
-  padding: 120px 20px;
-  background: radial-gradient(circle at top, rgba(255,122,0,0.2), transparent);
+  padding: 0 20px;
+  background: radial-gradient(circle at top, rgba(255, 122, 0, 0.2), transparent);
 }
 
-/* HEADINGS */
-h1 {
+/* HEADINGS – ikke overstyr Tailwind på komponent-sider */
+section:not([class]) h1 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
-h2 {
+section:not([class]) h2 {
   color: #ff7a00;
   margin-top: 40px;
 }
@@ -111,5 +111,28 @@ h2 {
 
 .btn-primary:hover {
   background: #ff8f1f;
-  transform: scale(1.05);
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #0d0d0d;
+  border-color: #fff;
 }

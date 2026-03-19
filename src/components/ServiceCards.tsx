@@ -3,12 +3,12 @@ import { Home, TreePine, Wrench, Cpu } from "lucide-react";
 
 const services = [
   {
-    title: "Rengjøring av Hus",
+    title: "Takvask",
     icon: Home,
-    description:
-      "Takvask, fasadevask, takrennerens og høytrykkspyling av uteområder.",
-    items: ["Takvask", "Fasadevask", "Takrennerens", "Avløpsrens"],
-    image: "/images/services/rengjoring-hus.png",
+    description: "Takvask, takrens og fjerning av mose og smuss.",
+    items: ["Takvask", "Takrens", "Mosefjerning", "Impregnering"],
+    image: "/images/takvask.jpg",
+    imagePosition: "object-[50%_12%]",
     link: "/takvask",
   },
   {
@@ -17,7 +17,8 @@ const services = [
     description:
       "Vedlikehold av hage og uteområder for private boliger og eiendommer.",
     items: ["Hekkeklipp", "Plenklipp", "Hagevedlikehold", "Rydding"],
-    image: "/images/services/gartner.png",
+    image: "/images/hage.jpg",
+    imagePosition: "object-[50%_18%]",
     link: "/hagearbeid",
   },
   {
@@ -26,23 +27,25 @@ const services = [
     description:
       "Mindre gravearbeid og klargjøring av tomt, drenering og oppkjørsel.",
     items: ["Graving", "Drenering", "Oppkjørsel", "Tomtearbeid"],
-    image: "/images/services/gravearbeid-arbeid.png",
+    image: "/images/graving.jpg",
+    imagePosition: "object-[50%_20%]",
     link: "/graving",
   },
   {
-    title: "Smart Hjem & Teknisk Hjelp",
+    title: "Smarthjem & Teknisk Hjelp",
     icon: Cpu,
     description:
-      "Installasjon av smarthus, nettverk, WiFi og teknisk hjelp hjemme.",
+      "Installasjon av smarthus, nettverk, WiFi og teknisk hjelp i hjemmet.",
     items: ["Smarthus", "WiFi & nettverk", "PC-hjelp", "Feilsøking"],
-    image: "/images/services/smarthjem.png",
+    image: "/images/smarthjem.jpg",
+    imagePosition: "object-[50%_22%]",
     link: "/smarthjem",
   },
 ];
 
 export default function ServiceCards() {
   return (
-    <section id="tjenester" className="bg-black text-white py-24">
+    <section id="tjenester" className="bg-black text-white pt-0 pb-24">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -67,8 +70,12 @@ export default function ServiceCards() {
                 className="service-card group block bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 hover:border-orange-500 transition-all duration-300 hover:-translate-y-1"
                 aria-label={`${service.title} – les mer`}
               >
-                <div className="w-full h-40 bg-black/20 overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                <div className="w-full h-60 md:h-64 bg-black/20 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className={`w-full h-full object-cover ${service.imagePosition}`}
+                  />
                 </div>
 
                 <div className="p-8">

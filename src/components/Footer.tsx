@@ -15,8 +15,8 @@ export default function Footer() {
             </a>
           </p>
           <p className="mt-1">
-            <a href="mailto:norman1584@protonmail.com" className="hover:text-orange-500 transition-colors">
-              E-post: norman1584@protonmail.com
+            <a href="mailto:post@jaerenmultiservice.no" className="hover:text-orange-500 transition-colors">
+              E-post: post@jaerenmultiservice.no
             </a>
           </p>
         </div>

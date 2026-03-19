@@ -1,44 +1,42 @@
-import { Link } from "react-router-dom";
-import Contact from "../../components/Contact";
-import Footer from "../../components/Footer";
+import { useNavigate } from "react-router-dom";
 
-function Drenering() {
+const MASKIN_TEKST =
+  "Vi vurderer hvert prosjekt individuelt og velger riktig gravemaskin og utstyr basert på størrelse og behov. Dette gir mer effektivt arbeid, mindre belastning på eiendommen og bedre resultat. Ved behov leies passende gravemaskin inn for oppdraget.";
+
+export default function Drenering() {
+  const navigate = useNavigate();
   return (
-    <>
-      <section>
-        <h1>Drenering</h1>
-        <p className="lead">
-          Dreneringsrør, sluk og avløpsløsninger for tomt og bygg.
-        </p>
-        <div className="trust">
-          <span>✔ Lokalt firma</span>
-          <span>✔ Rask respons</span>
-          <span>✔ Gratis befaring</span>
-        </div>
-        <h2>Hvordan vi utfører jobben</h2>
-        <p>
-          Vi legger drenering, sluk og rør etter behov. Riktig avløp og fukthåndtering sikrer tørr og trygg bygg og tomt.
-        </p>
-        <h2>Hvorfor er dette viktig?</h2>
-        <p>
-          Dårlig drenering gir fukt, mugg og skader. Profesjonell utforming og utførelse sparer penger på sikt.
-        </p>
-        <div className="price-box">
-          <h3>Pris</h3>
-          <p>Pris etter befaring</p>
-        </div>
-        <div className="upsell">
-          <h2>Anbefalt tillegg</h2>
-          <p>Kombiner med planering eller gravearbeid for en komplett tomte-/byggeløsning.</p>
-        </div>
-        <Link to="/" state={{ scrollTo: "befaring" }} className="btn-primary">
-          Få befaring
-        </Link>
-      </section>
-      <Contact />
-      <Footer />
-    </>
+    <section className="max-w-4xl mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold mb-4">Drenering</h1>
+      <p className="mb-6">
+        God drenering er avgjørende for å unngå fuktproblemer. Vi utfører mindre dreneringsarbeid tilpasset ditt behov.
+      </p>
+      <h2 className="text-xl font-semibold mb-2">Hvordan vi jobber</h2>
+      <ul className="mb-6 list-disc pl-5">
+        <li>Befaring</li>
+        <li>Plan</li>
+        <li>Utførelse</li>
+      </ul>
+      <h2 className="text-xl font-semibold mt-6 mb-2">Ekstra info</h2>
+      <p className="mb-6">{MASKIN_TEKST}</p>
+      <h2 className="text-xl font-semibold mb-2">Anbefalt tillegg</h2>
+      <ul className="mb-6 list-disc pl-5">
+        <li>Graving</li>
+        <li>Planering</li>
+        <li>Tilkjøring av masse</li>
+      </ul>
+      <button
+        type="button"
+        className="btn-primary"
+        onClick={() => {
+          navigate("/");
+          setTimeout(() => {
+            document.getElementById("befaring")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 150);
+        }}
+      >
+        Bestill befaring
+      </button>
+    </section>
   );
 }
-
-export default Drenering;

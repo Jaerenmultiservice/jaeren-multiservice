@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
 
 function Hage() {
   return (
     <>
-      <div className="relative w-full h-[60vh] overflow-hidden">
-        <img
-          src="/images/hage.jpg"
-          alt="Hagearbeid"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
-            Hagearbeid
-          </h1>
-        </div>
-      </div>
+      <Hero image="/images/hage.jpg" title="Hagearbeid" position="center" />
 
-      <section>
-        <h1>Hagearbeid</h1>
+      <section className="max-w-4xl mx-auto px-4">
+        <h2 className="text-2xl font-semibold mt-10 mb-4">Velg tjeneste</h2>
 
-        <div className="grid">
-          <Link to="/hagearbeid/hekk">Hekkeklipp</Link>
-          <Link to="/hagearbeid/rydding">Rydding</Link>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Link to="/hagearbeid/hekkeklipp" className="btn-secondary">
+            Hekkeklipp
+          </Link>
+          <Link to="/hagearbeid/plenklipp" className="btn-secondary">
+            Plenklipp
+          </Link>
+          <Link to="/hagearbeid/hagevedlikehold" className="btn-secondary">
+            Hagevedlikehold
+          </Link>
+          <Link to="/hagearbeid/rydding" className="btn-secondary">
+            Rydding
+          </Link>
         </div>
       </section>
     </>

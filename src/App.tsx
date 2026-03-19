@@ -2,25 +2,29 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
-// TAK
 import Takvask from "./pages/Takvask";
-import Takrens from "./pages/tak/Takrens";
+import TakvaskUnderside from "./pages/tak/TakvaskUnderside";
+import TakrensNested from "./pages/tak/Takrens";
+import Mosefjerning from "./pages/Mosefjerning";
 import TakImpregnering from "./pages/tak/TakImpregnering";
 
-// HAGE
 import Hage from "./pages/Hage";
-import Hekk from "./pages/hage/Hekk";
-import Rydding from "./pages/hage/Rydding";
+import HekkeklippFlat from "./pages/Hekkeklipp";
+import Plenklipp from "./pages/Plenklipp";
+import Hagevedlikehold from "./pages/Hagevedlikehold";
+import RyddingFlat from "./pages/Rydding";
 
-// GRAVING
 import Graving from "./pages/Graving";
-import Planering from "./pages/graving/Planering";
-import Drenering from "./pages/graving/Drenering";
+import GravingTjeneste from "./pages/graving/GravingTjeneste";
+import DreneringNested from "./pages/graving/Drenering";
+import Oppkjor from "./pages/graving/Oppkjor";
+import Tomtearbeid from "./pages/graving/Tomtearbeid";
 
-// SMART
 import Smarthjem from "./pages/Smarthjem";
-import SmarthjemInstallasjon from "./pages/smart/Installasjon";
-import SmarthjemFeilsok from "./pages/smart/Feilsok";
+import Smarthus from "./pages/Smarthus";
+import Wifi from "./pages/Wifi";
+import PcHjelp from "./pages/smart/PcHjelp";
+import Feilsoking from "./pages/Feilsoking";
 
 function App() {
   return (
@@ -28,25 +32,29 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* TAK */}
         <Route path="/takvask" element={<Takvask />} />
-        <Route path="/takvask/takrens" element={<Takrens />} />
+        <Route path="/takvask/takvask" element={<TakvaskUnderside />} />
+        <Route path="/takvask/takrens" element={<TakrensNested />} />
+        <Route path="/takvask/mosefjerning" element={<Mosefjerning />} />
         <Route path="/takvask/impregnering" element={<TakImpregnering />} />
 
-        {/* HAGE */}
         <Route path="/hagearbeid" element={<Hage />} />
-        <Route path="/hagearbeid/hekk" element={<Hekk />} />
-        <Route path="/hagearbeid/rydding" element={<Rydding />} />
+        <Route path="/hagearbeid/hekkeklipp" element={<HekkeklippFlat />} />
+        <Route path="/hagearbeid/plenklipp" element={<Plenklipp />} />
+        <Route path="/hagearbeid/hagevedlikehold" element={<Hagevedlikehold />} />
+        <Route path="/hagearbeid/rydding" element={<RyddingFlat />} />
 
-        {/* GRAVING */}
         <Route path="/graving" element={<Graving />} />
-        <Route path="/graving/planering" element={<Planering />} />
-        <Route path="/graving/drenering" element={<Drenering />} />
+        <Route path="/graving/graving" element={<GravingTjeneste />} />
+        <Route path="/graving/drenering" element={<DreneringNested />} />
+        <Route path="/graving/oppkjoring" element={<Oppkjor />} />
+        <Route path="/graving/tomtearbeid" element={<Tomtearbeid />} />
 
-        {/* SMART */}
         <Route path="/smarthjem" element={<Smarthjem />} />
-        <Route path="/smarthjem/installasjon" element={<SmarthjemInstallasjon />} />
-        <Route path="/smarthjem/feilsok" element={<SmarthjemFeilsok />} />
+        <Route path="/smarthjem/smarthus" element={<Smarthus />} />
+        <Route path="/smarthjem/wifi" element={<Wifi />} />
+        <Route path="/smarthjem/pc" element={<PcHjelp />} />
+        <Route path="/smarthjem/feilsoking" element={<Feilsoking />} />
       </Routes>
     </Router>
   );
