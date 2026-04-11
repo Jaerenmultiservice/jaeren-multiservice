@@ -30,61 +30,99 @@ export default function Contact() {
     }
   }
 
-  const labelClass = 'block text-base font-medium text-gray-200 mb-2'
+  const labelClass = "mb-2 block text-sm font-medium text-neutral-200";
 
-  const inputClass = 'h-14 w-full bg-transparent border border-neutral-700 px-4 text-base text-white placeholder:text-gray-500'
-  const textareaClass = 'min-h-[160px] w-full bg-transparent border border-neutral-700 px-4 py-4 text-base text-white placeholder:text-gray-500'
+  const fieldClass =
+    "h-12 w-full rounded-lg border border-neutral-600 bg-[#1a1a1a] px-4 text-base text-white outline-none transition placeholder:text-neutral-500 focus:border-accent focus:ring-1 focus:ring-accent";
+  const textareaClass =
+    "min-h-[140px] w-full rounded-lg border border-neutral-600 bg-[#1a1a1a] px-4 py-3 text-base text-white outline-none transition placeholder:text-neutral-500 focus:border-accent focus:ring-1 focus:ring-accent";
 
   return (
-    <section id="befaring" className="py-20 md:py-28 bg-dark-section border-y border-gray-800 scroll-mt-[140px]">
-      <div className="max-w-2xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-          Få gratis befaring
-        </h2>
+    <section id="befaring" className="scroll-mt-[120px] border-y border-white/10 bg-[#0d0d0d] py-20 md:py-28">
+      <div className="mx-auto max-w-xl px-6">
+        <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">Få gratis befaring</h2>
 
-        <p className="text-base md:text-lg text-gray-400 mb-10">
-          Send forespørsel – vi tar kontakt for en uforpliktende befaring og skriftlig tilbud.
+        <p className="mt-3 text-base leading-relaxed text-neutral-400 md:text-lg">
+          Fyll ut skjemaet – vi kontakter deg for en uforpliktende befaring og skriftlig tilbud.
         </p>
 
-        <form onSubmit={handleSubmit} method="POST" action={FORMSPREE_URL} className="mt-6 space-y-6">
+        <form onSubmit={handleSubmit} method="POST" action={FORMSPREE_URL} className="mt-10 space-y-5">
           <input type="hidden" name="_subject" value="Ny forespørsel fra jaerenmultiservice.no" />
 
           <div>
             <label htmlFor="name" className={labelClass}>
               Navn
             </label>
-            <input id="name" name="name" type="text" required className={inputClass} placeholder="Navn" />
+            <input id="name" name="name" type="text" required autoComplete="name" className={fieldClass} placeholder="Ditt fulle navn" />
+          </div>
+
+          <div>
+            <label htmlFor="phone" className={labelClass}>
+              Telefon
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              className={fieldClass}
+              placeholder="Telefonnummer"
+            />
           </div>
 
           <div>
             <label htmlFor="email" className={labelClass}>
               E-post
             </label>
-            <input id="email" name="email" type="email" required className={inputClass} placeholder="E-post" />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              className={fieldClass}
+              placeholder="din@epost.no"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="service" className={labelClass}>
+              Type tjeneste
+            </label>
+            <select id="service" name="service" className={`${fieldClass} cursor-pointer`} defaultValue="">
+              <option value="" disabled>
+                Velg kategori
+              </option>
+              <option value="Tak / takvask">Tak / takvask</option>
+              <option value="Hage">Hage</option>
+              <option value="Graving / drenering">Graving / drenering</option>
+              <option value="Smarthjem / teknisk">Smarthjem / teknisk</option>
+              <option value="Annet">Annet</option>
+            </select>
           </div>
 
           <div>
             <label htmlFor="message" className={labelClass}>
-              Melding
+              Beskrivelse
             </label>
             <textarea
               id="message"
               name="message"
               required
               className={textareaClass}
-              placeholder="Hva trenger du hjelp med?"
+              placeholder="Kort om hva du trenger hjelp med …"
             />
           </div>
 
-          {status === 'sent' && <p className="text-accent font-medium">Takk! Vi tar kontakt så snart vi kan.</p>}
-          {status === 'error' && <p className="text-red-400">Noe gikk galt. Prøv igjen eller ring oss.</p>}
+          {status === "sent" && <p className="text-accent font-medium">Takk! Vi tar kontakt så snart vi kan.</p>}
+          {status === "error" && <p className="text-red-400">Noe gikk galt. Prøv igjen eller ring oss.</p>}
 
           <button
             type="submit"
-            disabled={status === 'sending'}
-            className="h-14 w-full bg-orange-500 hover:bg-orange-600 text-white text-base font-semibold rounded-lg transition-colors disabled:opacity-70"
+            disabled={status === "sending"}
+            className="h-14 w-full rounded-lg bg-accent text-base font-semibold text-white transition hover:bg-[#ff8f1f] disabled:opacity-70"
           >
-            {status === 'sending' ? 'Sender …' : 'Send'}
+            {status === "sending" ? "Sender …" : "Send melding"}
           </button>
         </form>
       </div>
