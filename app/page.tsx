@@ -46,10 +46,10 @@ export default function Home() {
             <Image
               src="/logo.png"
               alt="Jæren Multiservice"
-              width={180}
-              height={76}
+              width={260}
+              height={110}
               priority
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </a>
 
