@@ -156,7 +156,9 @@ export default function Home() {
           <span>
             © {new Date().getFullYear()} Jæren Multiservice · {orgNrLabel}
           </span>
-          <span className="text-zinc-400">jaerenmultiservice.no</span>
+          <span className="text-right text-zinc-400 sm:text-left">
+            jaerenmultiservice.no · www.jaerenmultiservice.no
+          </span>
         </div>
       </footer>
     </div>

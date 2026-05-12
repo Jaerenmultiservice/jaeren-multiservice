@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jaerenmultiservice.no"),
+  metadataBase: new URL("https://www.jaerenmultiservice.no"),
   alternates: {
     canonical: "/",
   },
