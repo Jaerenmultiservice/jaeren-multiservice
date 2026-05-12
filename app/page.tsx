@@ -42,14 +42,15 @@ export default function Home() {
     <div className="flex min-h-full flex-col bg-[#050505] text-zinc-100">
       <header className="border-b border-white/10 bg-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-          <a className="flex items-center gap-3" href="#" aria-label="Jæren Multiservice">
-            <span className="grid h-14 w-24 place-items-center rounded-full border border-orange-500/30 bg-[radial-gradient(circle_at_center,#3a2614,#090909_70%)] text-center shadow-[0_0_22px_rgba(249,115,22,0.22)]">
-              <span className="text-[11px] font-black uppercase leading-3 tracking-wide text-orange-300">
-                Jæren
-                <br />
-                <span className="text-[9px] text-white">Multiservice</span>
-              </span>
-            </span>
+          <a className="flex items-center" href="#" aria-label="Jæren Multiservice">
+            <Image
+              src="/logo.png"
+              alt="Jæren Multiservice"
+              width={180}
+              height={76}
+              priority
+              className="h-14 w-auto object-contain"
+            />
           </a>
 
           <nav className="hidden items-center gap-12 text-sm font-semibold text-zinc-100 md:flex">
