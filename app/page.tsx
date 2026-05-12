@@ -100,12 +100,12 @@ export default function Home() {
                 key={item.src}
                 className="group overflow-hidden rounded-xl border border-white/10 bg-[#171717] shadow-2xl shadow-black/30"
               >
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-zinc-900">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-zinc-900">
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
+                    className="object-contain transition duration-500 group-hover:scale-105"
                     sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
