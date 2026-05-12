@@ -2,31 +2,35 @@ import Image from "next/image";
 
 const services = [
   {
-    src: "/hekkeklipping.png",
-    title: "Hekk og utemiljø",
-    description:
-      "Trimming av hekk og busker med riktig utstyr og fokus på sikkerhet.",
-    alt: "Håndverker som klipper hekk med batteridrevet hekksaks.",
-  },
-  {
     src: "/takvask.png",
-    title: "Takvask",
+    title: "Rengjøring av Hus",
     description:
-      "Skånsom og effektiv vask av takstein med høytrykkspyler og sikkerhetsutstyr.",
+      "Takvask, fasadevask, takrennerens og høytrykkspyling av uteområder.",
+    items: ["Takvask", "Fasadevask", "Takrennerens", "Avløpsrens"],
     alt: "Håndverker som vasker tak med høytrykkspyler, festet i sikkerhetssele.",
   },
   {
-    src: "/gravemaskin.png",
-    title: "Graving og planering",
+    src: "/hekkeklipping.png",
+    title: "Hagearbeid",
     description:
-      "Kompakt gravemaskin for mindre grøfter, planering og oppdrag i trange områder.",
+      "Vedlikehold av hage og uteområder for private boliger og eiendommer.",
+    items: ["Hekkeklipp", "Plenklipp", "Hagevedlikehold", "Rydding"],
+    alt: "Håndverker som klipper hekk med batteridrevet hekksaks.",
+  },
+  {
+    src: "/gravemaskin.png",
+    title: "Gravearbeid",
+    description:
+      "Mindre gravearbeid og klargjøring av tomt, drenering og oppkjørsel.",
+    items: ["Graving", "Drenering", "Oppkjørsel", "Tomtearbeid"],
     alt: "Betjening av liten gravemaskin i hage med oppgravd jord.",
   },
   {
     src: "/kattedor.png",
-    title: "Montering og småjobber",
+    title: "Smart Hjem & Teknisk Hjelp",
     description:
-      "Nøyaktig montering av blant annet kattedør og små installasjoner i bolig.",
+      "Installasjon av smarthus, nettverk, WiFi og teknisk hjelp hjemme.",
+    items: ["Smarthus", "WiFi & nettverk", "PC-hjelp", "Feilsøking"],
     alt: "Håndverker som monterer elektronisk kattedør i ytterdør.",
   },
 ] as const;
@@ -35,99 +39,96 @@ const orgNrLabel = "Org.nr. 937 516 606";
 
 export default function Home() {
   return (
-    <div className="flex min-h-full flex-col bg-zinc-50 text-zinc-900">
-      <header className="border-b border-zinc-200/80 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-          <span className="text-lg font-semibold tracking-tight">
-            Jæren Multiservice
-          </span>
+    <div className="flex min-h-full flex-col bg-[#050505] text-zinc-100">
+      <header className="border-b border-white/10 bg-black">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+          <a className="flex items-center gap-3" href="#" aria-label="Jæren Multiservice">
+            <span className="grid h-14 w-24 place-items-center rounded-full border border-orange-500/30 bg-[radial-gradient(circle_at_center,#3a2614,#090909_70%)] text-center shadow-[0_0_22px_rgba(249,115,22,0.22)]">
+              <span className="text-[11px] font-black uppercase leading-3 tracking-wide text-orange-300">
+                Jæren
+                <br />
+                <span className="text-[9px] text-white">Multiservice</span>
+              </span>
+            </span>
+          </a>
+
+          <nav className="hidden items-center gap-12 text-sm font-semibold text-zinc-100 md:flex">
+            <a className="transition hover:text-orange-400" href="#tjenester">
+              Tjenester
+            </a>
+            <a className="transition hover:text-orange-400" href="#om-oss">
+              Om oss
+            </a>
+            <a className="transition hover:text-orange-400" href="#kontakt">
+              Kontakt
+            </a>
+          </nav>
+
           <a
-            className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-800"
-            href="#tjenester"
+            className="rounded-md bg-orange-500 px-5 py-3 text-sm font-bold text-white shadow-[0_0_18px_rgba(249,115,22,0.28)] transition hover:bg-orange-400"
+            href="#kontakt"
           >
-            Våre tjenester
+            Gratis befaring
           </a>
         </div>
       </header>
 
-      <main className="flex-1">
-        <section className="relative isolate min-h-[min(85vh,52rem)] w-full overflow-hidden bg-zinc-900">
-          <Image
-            src="/hekkeklipping.png"
-            alt=""
-            fill
-            priority
-            className="object-cover object-center opacity-90"
-            sizes="100vw"
-          />
-          <div
-            className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/20"
-            aria-hidden
-          />
-          <div className="relative z-10 mx-auto flex min-h-[min(85vh,52rem)] max-w-6xl flex-col justify-end px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32">
-            <p className="mb-2 text-sm font-medium uppercase tracking-wider text-emerald-200/95">
-              Lokalt på Jæren
+      <main className="flex-1 bg-black">
+        <section className="border-b border-white/10 bg-[radial-gradient(circle_at_top,#151515,#050505_52%)] px-5 py-10 sm:px-8">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-400">
+              Profesjonelle tjenester
             </p>
-            <h1 className="max-w-2xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
-              Alt fra hekk og tak til graving og montering
+            <h1 className="mt-4 max-w-3xl text-4xl font-black tracking-tight text-white sm:text-6xl">
+              Praktisk hjelp på Jæren
             </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-zinc-200">
-              Vi leverer ryddige oppdrag med profesjonelt utstyr og tydelig
-              kommunikasjon — til avtalt tid og pris.
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-300">
+              Ryddig arbeid innen husvask, hagearbeid, graving og teknisk hjelp
+              hjemme. Gratis og uforpliktende befaring.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-zinc-900 shadow-sm transition hover:bg-zinc-100"
-                href="#tjenester"
-              >
-                Se hva vi gjør
-              </a>
-              <a
-                className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15"
-                href="#kontakt"
-              >
-                Kontakt oss
-              </a>
-            </div>
           </div>
         </section>
 
         <section
           id="tjenester"
-          className="mx-auto max-w-6xl scroll-mt-20 px-4 py-16 sm:px-6 sm:py-24"
+          className="mx-auto max-w-7xl scroll-mt-24 px-5 py-9 sm:px-8 sm:py-10"
         >
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight text-zinc-900">
-              Tjenester
-            </h2>
-            <p className="mt-3 text-lg leading-relaxed text-zinc-600">
-              Et utvalg av oppdrag vi tar på oss. Ta gjerne kontakt dersom du
-              lurer på om vi kan hjelpe med noe annet.
-            </p>
-          </div>
-
-          <ul className="mt-12 grid gap-8 sm:grid-cols-2">
+          <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {services.map((item) => (
               <li
                 key={item.src}
-                className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:border-zinc-300 hover:shadow-md"
+                className="group overflow-hidden rounded-xl border border-white/10 bg-[#171717] shadow-2xl shadow-black/30"
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-100">
+                <div className="relative aspect-[16/9] w-full overflow-hidden bg-zinc-900">
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
-                    className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
                 </div>
-                <div className="p-6 sm:p-7">
-                  <h3 className="text-xl font-semibold tracking-tight text-zinc-900">
+                <div className="flex min-h-64 flex-col p-7">
+                  <h2 className="text-2xl font-black tracking-tight text-white">
                     {item.title}
-                  </h3>
-                  <p className="mt-2 text-base leading-relaxed text-zinc-600">
+                  </h2>
+                  <p className="mt-5 text-sm leading-7 text-zinc-400">
                     {item.description}
                   </p>
+
+                  <ul className="mt-5 space-y-1 text-sm leading-6 text-zinc-300">
+                    {item.items.map((service) => (
+                      <li key={service}>- {service}</li>
+                    ))}
+                  </ul>
+
+                  <a
+                    className="mt-auto pt-7 text-sm font-bold text-orange-500 transition hover:text-orange-400"
+                    href="#kontakt"
+                  >
+                    Les mer →
+                  </a>
                 </div>
               </li>
             ))}
@@ -135,28 +136,57 @@ export default function Home() {
         </section>
 
         <section
-          id="kontakt"
-          className="border-t border-zinc-200 bg-white scroll-mt-20"
+          id="om-oss"
+          className="border-y border-white/10 bg-[#0b0b0b] px-5 py-14 sm:px-8"
         >
-          <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-            <h2 className="text-2xl font-semibold tracking-tight text-zinc-900">
+          <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-orange-400">
+                Om oss
+              </p>
+              <h2 className="mt-3 text-3xl font-black text-white">
+                Små og store oppdrag, gjort skikkelig
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-300">
+                Jæren Multiservice hjelper private og bedrifter med praktiske
+                oppdrag der kvalitet, ryddighet og tydelig avtale betyr mest.
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-black p-6 text-sm leading-7 text-zinc-300">
+              <p>{orgNrLabel}</p>
+              <p>jaerenmultiservice.no</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="kontakt"
+          className="scroll-mt-24 bg-black px-5 py-14 sm:px-8"
+        >
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-3xl font-black tracking-tight text-white">
               Kontakt
             </h2>
-            <p className="mt-3 max-w-xl text-zinc-600">
+            <p className="mt-4 max-w-xl text-zinc-300">
               Vi svarer så raskt vi kan. Beskriv gjerne type oppdrag og adresse,
               så vurderer vi sammen neste steg.
             </p>
-            <p className="mt-4 text-sm text-zinc-500">{orgNrLabel}</p>
+            <a
+              className="mt-8 inline-flex rounded-md bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-400"
+              href="mailto:post@jaerenmultiservice.no"
+            >
+              post@jaerenmultiservice.no
+            </a>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-zinc-200 bg-zinc-50">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <footer className="border-t border-white/10 bg-black">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <span>
             © {new Date().getFullYear()} Jæren Multiservice · {orgNrLabel}
           </span>
-          <span className="text-zinc-400">jaerenmultiservice.no</span>
+          <span className="text-zinc-500">jaerenmultiservice.no</span>
         </div>
       </footer>
     </div>
