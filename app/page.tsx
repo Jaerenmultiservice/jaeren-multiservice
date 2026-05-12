@@ -105,7 +105,7 @@ export default function Home() {
                     src={item.src}
                     alt={item.alt}
                     fill
-                    className="object-contain transition duration-500 group-hover:scale-105"
+                    className="object-cover object-top transition duration-500 group-hover:scale-105"
                     sizes="(min-width: 1280px) 25vw, (min-width: 640px) 50vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
